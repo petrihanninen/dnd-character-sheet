@@ -1,31 +1,34 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <MainStats />
     <router-view />
+    <MainNav />
   </div>
 </template>
 
+<script>
+import MainStats from "@/components/MainStats.vue";
+import MainNav from "@/components/MainNav.vue";
+
+export default {
+  components: { MainStats, MainNav }
+};
+</script>
+
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+body {
+  margin: 5rem 0;
+  width: 100vw;
+  max-width: 800px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+a {
+  color: #fff;
+  text-decoration: none;
 }
 </style>
